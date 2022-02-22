@@ -1,21 +1,21 @@
 import { Schema, model } from 'mongoose';
 
 
-const facturaSchema = new Schema({
-    valor_total: {
+const Invoice = new Schema({
+    total_value: {
         type: Number,
         required: true
     },
-    iva_total: {
+    total_vat: {
         type: Number,
         required: true
     },
-    productos: {
+    products: {
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'Producto',
     },
-    pagada: {
+    paid: {
         type: Boolean,
         required: true
     }
@@ -23,4 +23,4 @@ const facturaSchema = new Schema({
     timestamps: true
 });
 
-export default model('factura', facturaSchema);
+export default model('invoice', Invoice);

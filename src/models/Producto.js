@@ -1,16 +1,16 @@
 import { Schema, model } from 'mongoose'
 
-const productSchema = new Schema({
-    nombre: {
+const Product = new Schema({
+    name: {
         type: String,
         required: true,
         trim: true
     },
-    iva: {
+    vat: {
         type: Number,
         required: true
     },
-    valor: {
+    value: {
         type: true,
         required: true
     }
@@ -18,4 +18,4 @@ const productSchema = new Schema({
     timestamps: true
 });
 
-export default model('producto', productSchema);
+export default model('producto', Product);
