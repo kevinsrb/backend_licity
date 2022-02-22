@@ -55,7 +55,3 @@ async function verifyToken(req, res, next) {
 		return res.status(401).send('Unauhtorized Request');
 	}
 }
-
-
-
-

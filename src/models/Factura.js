@@ -2,15 +2,25 @@ import { Schema, model } from 'mongoose';
 
 
 const facturaSchema = new Schema({
-    valor_total: Number,
-    iva_total: Number,
+    valor_total: {
+        type: Number,
+        required: true
+    },
+    iva_total: {
+        type: Number,
+        required: true
+    },
     productos: {
         type: Schema.Types.ObjectId,
+        required: true,
         ref: 'Producto',
     },
-    pagada: Boolean
+    pagada: {
+        type: Boolean,
+        required: true
+    }
 }, {
     timestamps: true
 });
 
-module.exports = model('Factura', facturaSchema, 'facturas');
+export default model('factura', facturaSchema);

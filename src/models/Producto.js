@@ -1,11 +1,21 @@
 import { Schema, model } from 'mongoose'
 
 const productSchema = new Schema({
-    nombre: String,
-    iva: Number,
-    valor: Number
+    nombre: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    iva: {
+        type: Number,
+        required: true
+    },
+    valor: {
+        type: true,
+        required: true
+    }
 }, {
     timestamps: true
 });
 
-module.exports = model('Producto', productSchema, 'productos');
+export default model('producto', productSchema);

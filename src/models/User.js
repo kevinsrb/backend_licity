@@ -7,4 +7,4 @@ const userSchema = new Schema({
     timestamps: true
 });
 
-module.exports = model('User', userSchema, 'users');
+export default model('user', userSchema);
