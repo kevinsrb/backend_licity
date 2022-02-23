@@ -1,6 +1,5 @@
 import { Schema, model } from 'mongoose';
 
-
 const Invoice = new Schema({
     total_value: {
         type: Number,
@@ -11,9 +10,8 @@ const Invoice = new Schema({
         required: true
     },
     products: {
-        type: Schema.Types.ObjectId,
+        type: Array,
         required: true,
-        ref: 'Producto',
     },
     paid: {
         type: Boolean,
